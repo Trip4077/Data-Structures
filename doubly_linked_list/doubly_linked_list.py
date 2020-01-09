@@ -170,25 +170,25 @@ class DoublyLinkedList:
 
 
 
-first_node = ListNode(100)
+# first_node = ListNode(100)
 
-linked_list = DoublyLinkedList(first_node)
+# linked_list = DoublyLinkedList(first_node)
 
-linked_list.add_to_head( 1 )
-linked_list.add_to_head( 2 )
-linked_list.add_to_head( 3 )
+# linked_list.add_to_head( 1 )
+# linked_list.add_to_head( 2 )
+# linked_list.add_to_head( 3 )
 
-linked_list.add_to_tail( 400 )
-linked_list.add_to_tail( 501 )
+# linked_list.add_to_tail( 400 )
+# linked_list.add_to_tail( 501 )
 
-#linked_list.delete(first_node)
+# #linked_list.delete(first_node)
 
-linked_list.remove_from_head()
-linked_list.remove_from_tail()
+# linked_list.remove_from_head()
+# linked_list.remove_from_tail()
 
-# linked_list.add_to_head(first_node)
-# linked_list.add_to_tail(first_node)
+# # linked_list.add_to_head(first_node)
+# # linked_list.add_to_tail(first_node)
 
-linked_list.print()
-print("List Length: " + str( len( linked_list ) ) )
-print("Largest Value: " + str( linked_list.get_max() ) )
+# linked_list.print()
+# print("List Length: " + str( len( linked_list ) ) )
+# print("Largest Value: " + str( linked_list.get_max() ) )

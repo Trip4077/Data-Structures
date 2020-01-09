@@ -29,8 +29,10 @@ class LRUCache:
     key-value pair doesn't exist in the cache.
     """
     def get(self, key):
+        # check if key is valid
         if not key in self.storage: return None
-        print(self.storage[key].value[key])
+
+        # Return Value at Key
         return self.storage[key].value[key]
 
     """
@@ -44,25 +46,34 @@ class LRUCache:
     the newly-specified value.
     """
     def set(self, key, value):
+        # Increase size
         self.size += 1
+
         # if limit is exceeded, make space before insert
-        if self.limit < self.size and not key in list( self.storage.keys() ):       
+        if self.limit < self.size and not key in list( self.storage.keys() ): 
+
             # get key in node and remove from storage
             for tail_key in self.list.tail.value:
                 self.storage.pop( tail_key, None )
            
+           # Remove Tail From List
             self.list.remove_from_tail()
+            # Decrease Size Back to 3
             self.size -= 1
        
-        # Check if key needs to be inserted or updated
+        # Check if key needs to be updated
         if key in list( self.storage.keys() ):
+
+            #Remove Current Key:Value from Storage
             self.list.delete( self.storage[key] )
             self.storage.pop( key, None )
 
+            # Add Key:Value to List and In Storage
             self.list.add_to_head({ key: value })
             self.storage[key] = self.list.head
 
         else:
+            # Insert Into Storage
             self.list.add_to_head({ key: value })
             self.storage[key] = self.list.head
             
